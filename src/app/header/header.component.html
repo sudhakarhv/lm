@@ -1,1 +1,68 @@
+<button mat-button color="primary">Primary</button>
+<mat-grid-list cols="20" rowHeight="60px">
+    <mat-grid-tile
+    [colspan]="2"
+    [rowspan]="1"
+    [style.background]="'black'">
+</mat-grid-tile>
+  <mat-grid-tile
+      [colspan]="10"
+      [rowspan]="1"
+      [style.background]="'black'">
+
+        <button mat-raised-button color='primary' [matMenuTriggerFor]="categories">Categories</button>
+        <button mat-raised-button color='primary' [matMenuTriggerFor]="categories">Categories</button>
+
+
+
+<mat-menu #categories="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="groceries">Groceries</button>
+  <button mat-menu-item [matMenuTriggerFor]="personalCare">Personal Care</button>
+</mat-menu>
+
+<mat-menu #groceries="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="pulses">Pulses</button>
+  <button mat-menu-item [matMenuTriggerFor]="spices">Spices</button>
+  <button mat-menu-item [matMenuTriggerFor]="masala">Masala</button>
+  <button mat-menu-item>Flours / Atta</button>
+</mat-menu>
+
+<mat-menu #personalCare="matMenu">
+  <button mat-menu-item>Oral Care</button>
+  <button mat-menu-item>Hair Care</button>
+  <button mat-menu-item>Skin Care</button>
+  <button mat-menu-item>Body Care</button>
+  <button mat-menu-item>Face Wash</button>
+  <button mat-menu-item>Beauty & Cosmetics</button>
+</mat-menu>
+
+<mat-menu #pulses="matMenu">
+  <button mat-menu-item>Toor Dal</button>
+  <button mat-menu-item>Urad Dal</button>
+  <button mat-menu-item>Chana Dal</button>
+  </mat-menu>
+
+<mat-menu #spices="matMenu">
+  <button mat-menu-item>Cumin Seeds</button>
+  <button mat-menu-item>Mustard seeds</button>
+  <button mat-menu-item>Chilli powder</button>
+</mat-menu>
+
+<mat-menu #masala="matMenu">
+  <button mat-menu-item>Kitchen King</button>
+  <button mat-menu-item>Pav masala</button>
+  <button mat-menu-item>Panneer Butter Masala</button>
+</mat-menu>
+
+  </mat-grid-tile>
+  <mat-grid-tile
+      [colspan]="8"
+      [rowspan]="1"
+      [style.background]="'black'">
+
+  </mat-grid-tile>
+</mat-grid-list>
+
+
+
 

@@ -1,0 +1,9 @@
+mat-menu {
+  background-color: black;
+  font-display: white;
+}
+
+mat-tile {
+  background-color: aqua;
+  color: red;
+}
