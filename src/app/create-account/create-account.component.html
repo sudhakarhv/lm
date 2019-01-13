@@ -1,0 +1,35 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Create account</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+  <mat-card-content>
+      <div class="example-container">
+          <form class="example-container" [formGroup]="userdata">
+            <mat-form-field>
+              <input matInput formControlName="name" placeholder="Your name">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput formControlName="email" placeholder="Email Address">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input type=password matInput formControlName="password" placeholder="Password">
+            </mat-form-field>
+
+
+            <mat-form-field>
+                <input type=password matInput formControlName="confpassword" placeholder="Confirm Password">
+            </mat-form-field>
+          </form>
+        </div>
+
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button (click) = 'saveData();' mat-raised-button color='primary'>Create Local Masti account</button>
+  </mat-card-actions>
+</mat-card>

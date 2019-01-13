@@ -1,0 +1,78 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="false"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Login</a>
+      <a mat-list-item href="#">Search</a>
+      <a mat-list-item href="#">Placeholder</a>
+      <a mat-list-item href="#" color='primary' [matMenuTriggerFor]="categories">Shop</a>
+            <mat-menu #categories="matMenu">
+              <button mat-menu-item [matMenuTriggerFor]="groceries">Groceries</button>
+              <button mat-menu-item [matMenuTriggerFor]="personalCare">Personal Care</button>
+            </mat-menu>
+
+            <mat-menu #groceries="matMenu">
+              <button mat-menu-item [matMenuTriggerFor]="pulses">Pulses</button>
+              <button mat-menu-item [matMenuTriggerFor]="spices">Spices</button>
+              <button mat-menu-item [matMenuTriggerFor]="masala">Masala</button>
+              <button mat-menu-item>Flours / Atta</button>
+            </mat-menu>
+
+            <mat-menu #personalCare="matMenu">
+              <button mat-menu-item>Oral Care</button>
+              <button mat-menu-item>Hair Care</button>
+              <button mat-menu-item>Skin Care</button>
+              <button mat-menu-item>Body Care</button>
+              <button mat-menu-item>Face Wash</button>
+              <button mat-menu-item>Beauty & Cosmetics</button>
+            </mat-menu>
+
+            <mat-menu #pulses="matMenu">
+              <button mat-menu-item>Toor Dal</button>
+              <button mat-menu-item>Urad Dal</button>
+              <button mat-menu-item>Chana Dal</button>
+              </mat-menu>
+
+            <mat-menu #spices="matMenu">
+              <button mat-menu-item>Cumin Seeds</button>
+              <button mat-menu-item>Mustard seeds</button>
+              <button mat-menu-item>Chilli powder</button>
+            </mat-menu>
+
+            <mat-menu #masala="matMenu">
+              <button mat-menu-item>Kitchen King</button>
+              <button mat-menu-item>Pav masala</button>
+              <button mat-menu-item>Panneer Butter Masala</button>
+            </mat-menu>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Local Masti</span>
+
+      <!-- Just to give space between the main icon and other links -->
+      <span class="spacer"> </span>
+      <mat-nav-list *ngIf="!(isHandset$ | async)">
+        <a href="#">Search</a>
+        <a href="#">Login</a>
+        <a href="#">Placeholder</a>
+
+      </mat-nav-list>
+
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <ng-content></ng-content>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
